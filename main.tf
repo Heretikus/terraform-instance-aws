@@ -1,21 +1,21 @@
 provider "aws" {
   region = "ca-central-1"
-profile = "relevant_paint"
+profile = ""
 
 }
-resource "aws_instance" "test" {
+resource "aws_instance" "" {
   ami = "ami-0f0dee68e2d149576"
   instance_type = "t2.medium"
-  key_name = "lexx-key"
+  key_name = ""
   vpc_security_group_ids = ["${aws_security_group.Web.id}"]
   
 tags {
- Name = "Wordpress_staging"
+ Name = ""
 }
 }
 resource "aws_security_group" "Web" {
-  name = "wordpress_staging"
-  vpc_id = "vpc-609f4409"
+  name = ""
+  vpc_id = ""
 
   # Internal HTTP access from anywhere
   ingress {
@@ -55,7 +55,7 @@ resource "aws_security_group" "Web" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   tags {
-    Name = "Wordpress_staging"
+    Name = ""
   }
 }
 
